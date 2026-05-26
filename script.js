@@ -63,3 +63,45 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+// Konami Code: ↑↑↓↓←→←→BA
+const KONAMI = [
+  'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+  'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
+  'b', 'a',
+];
+
+let konamiBuffer = [];
+
+document.addEventListener('keydown', (event) => {
+  const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+  konamiBuffer.push(key);
+
+  if (konamiBuffer.length > KONAMI.length) {
+    konamiBuffer.shift();
+  }
+
+  if (konamiBuffer.length === KONAMI.length &&
+      konamiBuffer.every((k, i) => k === KONAMI[i])) {
+    triggerKonami();
+    konamiBuffer = [];
+  }
+});
+
+function triggerKonami() {
+  if (document.body.classList.contains('konami-active')) return;
+
+  document.body.classList.add('konami-active');
+
+  const message = document.createElement('div');
+  message.className = 'konami-message';
+  message.innerHTML = '<span>You found me!</span><span class="konami-emoji">🎮</span>';
+  document.body.appendChild(message);
+
+  setTimeout(() => {
+    document.body.classList.remove('konami-active');
+    message.classList.add('fade-out');
+    setTimeout(() => message.remove(), 600);
+  }, 3000);
+}
+
