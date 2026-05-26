@@ -21,6 +21,7 @@
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="#sandbox">Sandbox</a>
           <a href="#education">Education</a>
           <a href="#contacts">Contacts</a>
         </nav>
@@ -294,6 +295,39 @@
                 <a href="https://github.com/sonik-boom71/resumesite" target="_blank">GitHub</a>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sandbox">
+        <div class="container">
+          <h2 class="section__title reveal">Live Code Sandbox</h2>
+          <p class="reveal" style="color: var(--muted); margin-bottom: 18px;">
+            Edit the code below — preview updates as you type. Try changing colors, text, or the JS logic.
+          </p>
+
+          <div class="sandbox reveal">
+            <div class="sandbox__tabs">
+              <button class="sandbox__tab is-active" data-tab="html">HTML</button>
+              <button class="sandbox__tab" data-tab="css">CSS</button>
+              <button class="sandbox__tab" data-tab="js">JS</button>
+              <button class="sandbox__reset" id="sandboxReset">↺ Reset</button>
+            </div>
+
+            <div class="sandbox__body">
+              <div class="sandbox__editors">
+                <textarea class="sandbox__editor is-active" id="editorHtml" spellcheck="false"></textarea>
+                <textarea class="sandbox__editor" id="editorCss" spellcheck="false"></textarea>
+                <textarea class="sandbox__editor" id="editorJs" spellcheck="false"></textarea>
+              </div>
+
+              <iframe
+                class="sandbox__preview"
+                id="sandboxPreview"
+                title="Code preview"
+                sandbox="allow-scripts"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
