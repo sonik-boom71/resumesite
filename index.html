@@ -5,12 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maxim Davidiuk — Frontend Developer</title>
     <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div class="side-rail side-rail--left" aria-hidden="true"></div>
     <div class="side-rail side-rail--right" aria-hidden="true"></div>
+
+    <button class="mode-toggle" id="modeToggle" aria-pressed="false">
+      <span class="mode-toggle__icon">🎨</span>
+      <span class="mode-toggle__label">Presentation Mode</span>
+    </button>
+
+    <aside class="component-tree" id="componentTree" aria-hidden="true">
+      <div class="component-tree__head">
+        <span>⚙️ Component Tree</span>
+        <button class="component-tree__close" id="treeToggle" aria-label="Collapse tree">−</button>
+      </div>
+      <ul class="component-tree__list" id="componentTreeList"></ul>
+    </aside>
+
+    <div class="dev-badge" aria-hidden="true">⚙️ Dev Mode</div>
 
     <header class="header">
       <div class="container header__inner">

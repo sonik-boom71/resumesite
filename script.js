@@ -64,6 +64,226 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
+// Engineering Mode
+const COMPONENTS = [
+  {
+    target: '.hero', name: 'Hero',
+    description: 'Photo card + intro with badge, name, subtitle and CTAs.',
+    props: [
+      ['name', 'string', '"Maxim Davidiuk"'],
+      ['title', 'string', '"Frontend Developer"'],
+      ['photoSrc', 'string', '"photo.jpg"'],
+      ['actions', 'array', '3 buttons'],
+    ],
+    state: [['isVisible', 'boolean']],
+    deps: 'IntersectionObserver',
+    renders: 'section.hero > [PhotoCard, HeroContent]',
+  },
+  {
+    target: '.wave-block', name: 'WaveCanvas',
+    description: 'Animated sine waves on Canvas, reacts to mouse position.',
+    props: [
+      ['layers', 'number', '5'],
+      ['amplitude', 'number', '18–88px'],
+      ['accentColor', 'string', '"#facc15"'],
+      ['interactive', 'boolean', 'true'],
+    ],
+    state: [
+      ['mouseX', 'number'],
+      ['mouseY', 'number'],
+      ['time', 'number'],
+    ],
+    deps: 'requestAnimationFrame, Canvas 2D',
+    renders: 'canvas[width × 260px]',
+  },
+  {
+    target: '#about', name: 'AboutSection',
+    description: '3-column panel grid with hover lift.',
+    props: [
+      ['panels', 'array', '3 items'],
+      ['title', 'string', '"About Me"'],
+    ],
+    state: [['visiblePanels', 'array']],
+    deps: 'IntersectionObserver',
+    renders: 'section#about > Panels > [Panel × 3]',
+  },
+  {
+    target: '#experience', name: 'Timeline',
+    description: 'Vertical work history with company/period/role.',
+    props: [
+      ['jobs', 'array', '4 items'],
+      ['celebrationGif', 'string', '"gif-f1.gif"'],
+    ],
+    state: [['currentJob', 'number']],
+    deps: '—',
+    renders: 'section#experience > [Job × 4, GifCelebrate]',
+  },
+  {
+    target: '#skills', name: 'SkillsGrid',
+    description: 'Three categorized skill clouds.',
+    props: [
+      ['categories', 'array', '3 groups'],
+      ['skillsFrontend', 'array', '15 tags'],
+      ['skillsTools', 'array', '9 tags'],
+      ['skillsTesting', 'array', '5 tags'],
+    ],
+    state: [['rendered', 'boolean']],
+    deps: '—',
+    renders: 'section#skills > SkillsGrid > [Panel × 3]',
+  },
+  {
+    target: '#projects', name: 'ProjectsGrid',
+    description: 'Portfolio cards with tech stack and live links.',
+    props: [
+      ['projects', 'array', '5 items'],
+      ['layout', 'string', '"grid"'],
+    ],
+    state: [['hoveredCard', 'number']],
+    deps: '—',
+    renders: 'section#projects > Projects > [Project × 5]',
+  },
+  {
+    target: '#sandbox', name: 'LiveSandbox',
+    description: 'In-browser HTML/CSS/JS editor with iframe preview.',
+    props: [
+      ['defaultCode', 'object', '{html, css, js}'],
+      ['debounceMs', 'number', '250'],
+      ['sandboxMode', 'string', '"allow-scripts"'],
+    ],
+    state: [
+      ['activeTab', 'string'],
+      ['code', 'object'],
+      ['renderTimer', 'number'],
+    ],
+    deps: 'iframe srcdoc, debounce',
+    renders: 'section#sandbox > [Tabs, Editors, Preview]',
+  },
+  {
+    target: '#education', name: 'EducationCards',
+    description: 'Two-column education cards with linked coursework.',
+    props: [
+      ['institutions', 'array', '2 items'],
+    ],
+    state: [],
+    deps: '—',
+    renders: 'section#education > EduGrid > [Panel × 2]',
+  },
+  {
+    target: '#contacts', name: 'ContactsBlock',
+    description: 'Contact cards, FBI avatar and language tags.',
+    props: [
+      ['contacts', 'array', '3 items'],
+      ['languages', 'array', '3 items'],
+    ],
+    state: [],
+    deps: '—',
+    renders: 'section#contacts > [Contacts, GifFbi, Languages]',
+  },
+];
+
+function colorType(t) {
+  return `type-${t}`;
+}
+
+function buildDocs(c) {
+  const props = c.props.map(([n, t, d]) =>
+    `<div><span class="prop-name">${n}</span>: <span class="${colorType(t)}">${t}</span>` +
+    (d ? ` <span class="default-val">= ${d}</span>` : '') + '</div>'
+  ).join('');
+  const state = c.state.length
+    ? c.state.map(([n, t]) => `<div><span class="prop-name">${n}</span>: <span class="${colorType(t)}">${t}</span></div>`).join('')
+    : '<div class="default-val">stateless</div>';
+  return `
+    <h4>&lt;${c.name} /&gt;</h4>
+    <div>${c.description}</div>
+    <div class="doc-section"><div class="doc-label">Props</div>${props}</div>
+    <div class="doc-section"><div class="doc-label">State</div>${state}</div>
+    <div class="doc-section"><div class="doc-label">Dependencies</div>${c.deps}</div>
+    <div class="doc-section"><div class="doc-label">Renders</div>${c.renders}</div>
+  `;
+}
+
+function injectOverlays() {
+  COMPONENTS.forEach((c) => {
+    const el = document.querySelector(c.target);
+    if (!el || el.querySelector('.component-tag')) return;
+
+    const tag = document.createElement('div');
+    tag.className = 'component-tag';
+    tag.textContent = `<${c.name} />`;
+    el.appendChild(tag);
+
+    const info = document.createElement('div');
+    info.className = 'component-info';
+    info.innerHTML = `ℹ<div class="component-docs">${buildDocs(c)}</div>`;
+    el.appendChild(info);
+  });
+
+  // Footer counter
+  const counts = COMPONENTS.reduce((acc, c) => {
+    acc.props += c.props.length;
+    acc.states += c.state.length;
+    return acc;
+  }, { props: 0, states: 0 });
+  const footerP = document.querySelector('.footer p');
+  if (footerP) {
+    footerP.dataset.count = COMPONENTS.length;
+    footerP.dataset.props = counts.props;
+    footerP.dataset.states = counts.states;
+    footerP.dataset.size = '32.6kb';
+  }
+}
+
+function removeOverlays() {
+  document.querySelectorAll('.component-tag, .component-info').forEach((el) => el.remove());
+}
+
+function buildTree() {
+  const list = document.getElementById('componentTreeList');
+  if (!list || list.children.length) return;
+  COMPONENTS.forEach((c) => {
+    const li = document.createElement('li');
+    li.textContent = `<${c.name} />`;
+    li.addEventListener('click', () => {
+      const el = document.querySelector(c.target);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.add('is-highlighted');
+      setTimeout(() => el.classList.remove('is-highlighted'), 1400);
+    });
+    list.appendChild(li);
+  });
+}
+
+const modeToggle = document.getElementById('modeToggle');
+if (modeToggle) {
+  modeToggle.addEventListener('click', () => {
+    const isOn = document.body.classList.toggle('engineering-mode');
+    modeToggle.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+    const icon = modeToggle.querySelector('.mode-toggle__icon');
+    const label = modeToggle.querySelector('.mode-toggle__label');
+    if (isOn) {
+      icon.textContent = '🔧';
+      label.textContent = 'Engineering Mode';
+      buildTree();
+      injectOverlays();
+    } else {
+      icon.textContent = '🎨';
+      label.textContent = 'Presentation Mode';
+      removeOverlays();
+    }
+  });
+}
+
+const treeToggle = document.getElementById('treeToggle');
+if (treeToggle) {
+  treeToggle.addEventListener('click', () => {
+    const tree = document.getElementById('componentTree');
+    tree.classList.toggle('is-collapsed');
+    treeToggle.textContent = tree.classList.contains('is-collapsed') ? '+' : '−';
+  });
+}
+
 // Animated Sine Waves Canvas
 (function initWaves() {
   const canvas = document.getElementById('waveCanvas');
