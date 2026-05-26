@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maxim Davidiuk — Frontend Developer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="header">
+      <div class="container header__inner">
+        <a href="#top" class="logo">Maxim<span>.</span>dev</a>
+
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contacts">Contacts</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="photo-card reveal">
+            <img src="photo.jpg" alt="Maxim Davidiuk" />
+          </div>
+
+          <div class="hero__content reveal">
+            <div class="badge">Open to Frontend Developer Position</div>
+            <h1>Maxim Davidiuk</h1>
+            <p class="hero__subtitle">Frontend Developer · Mate Academy Student · Programming Teacher</p>
+            <p class="hero__text">
+              Seeking a Frontend Developer position in a company that values code quality,
+              continuous learning, and team collaboration. Applying skills in React, TypeScript,
+              and modern web development to create user interfaces that solve real problems.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#contacts">
+                Contact Me
+              </a>
+              <a
+                class="button button--secondary"
+                href="https://github.com/sonik-boom71"
+                target="_blank"
+              >
+                GitHub
+              </a>
+              <a
+                class="button button--secondary"
+                href="https://sonik-boom71.github.io/"
+                target="_blank"
+              >
+                Portfolio
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <h2 class="section__title reveal">About Me</h2>
+
+          <div class="panels">
+            <article class="panel reveal">
+              <h3>Who I Am</h3>
+              <p>
+                Frontend developer with real project experience. I started as a Game Developer,
+                learning efficient code and architecture, then moved into web development —
+                focusing on creating interfaces that solve real problems for real people.
+              </p>
+            </article>
+
+            <article class="panel reveal">
+              <h3>What I Do</h3>
+              <p>
+                I build responsive websites and web applications with React, TypeScript, and
+                SCSS. I teach programming fundamentals to kids, write tests with Cypress and Jest,
+                and deploy projects on GitHub Pages.
+              </p>
+            </article>
+
+            <article class="panel reveal">
+              <h3>What I Value</h3>
+              <p>
+                Code quality over speed. Continuous learning and development. Collaboration
+                and knowledge sharing. User experience and accessibility. I believe great
+                UI is not just coding — it's solving problems.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <h2 class="section__title reveal">Work Experience</h2>
+
+          <div class="experience">
+            <article class="job reveal">
+              <div class="job__header">
+                <div>
+                  <h3>Programming Teacher</h3>
+                  <p class="job__company">IT-Friends · Part-time</p>
+                </div>
+                <span class="job__period">Mar 2026 — Present</span>
+              </div>
+              <p class="job__location">Kyiv, Ukraine</p>
+              <p>
+                Teaching programming fundamentals to 10–11 year-old students using Construct
+                and Roblox Studio. Explaining complex concepts in an accessible way, helping
+                students understand algorithms and game creation, and inspiring young people
+                to think like developers.
+              </p>
+            </article>
+
+            <article class="job reveal">
+              <div class="job__header">
+                <div>
+                  <h3>Frontend Developer</h3>
+                  <p class="job__company">Self-employed · Freelancer</p>
+                </div>
+                <span class="job__period">Dec 2024 — Present</span>
+              </div>
+              <p class="job__location">Kyiv, Ukraine</p>
+              <p>
+                Developing responsive websites and web applications. Specializing in
+                HTML/SCSS/JavaScript and React. Creating clean, maintainable code and
+                deploying projects on GitHub Pages.
+              </p>
+            </article>
+
+            <article class="job reveal">
+              <div class="job__header">
+                <div>
+                  <h3>Web Developer</h3>
+                  <p class="job__company">Glovo · Professional Training Program</p>
+                </div>
+                <span class="job__period">Feb 2024 — Oct 2024</span>
+              </div>
+              <p class="job__location">Kyiv, Ukraine · Hybrid</p>
+              <p>
+                Developed web applications and components using modern technologies.
+                Worked with JavaScript, React, and development tools. Participated in
+                company projects, learning professional web development practices in a
+                real-world environment.
+              </p>
+            </article>
+
+            <article class="job reveal">
+              <div class="job__header">
+                <div>
+                  <h3>Game Developer</h3>
+                  <p class="job__company">Diamond.rp (Diamond Role Play)</p>
+                </div>
+                <span class="job__period">Oct 2019 — Jun 2022</span>
+              </div>
+              <p class="job__location">Kyiv, Ukraine</p>
+              <p>
+                Developed game engine systems using C++. Wrote code for network logic
+                and combat mechanics. Optimized performance for multiplayer servers and
+                gained experience in real-time system architecture.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="container">
+          <h2 class="section__title reveal">Skills</h2>
+
+          <div class="skills-grid">
+            <div class="panel reveal">
+              <h3>Frontend</h3>
+              <div class="skills" id="skillsFrontend"></div>
+            </div>
+            <div class="panel reveal">
+              <h3>Tools & Workflow</h3>
+              <div class="skills" id="skillsTools"></div>
+            </div>
+            <div class="panel reveal">
+              <h3>Testing & Quality</h3>
+              <div class="skills" id="skillsTesting"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="container">
+          <h2 class="section__title reveal">Portfolio Projects</h2>
+
+          <div class="projects">
+            <article class="project reveal">
+              <div class="project__tech">React 18 · TypeScript · Context API · Vite</div>
+              <h3>React Phone Catalog</h3>
+              <p>
+                Full-featured e-commerce app with Apple devices catalog. 7 pages, advanced
+                filtering/sorting/pagination, debounced search, 3 language support (EN/UA/RU)
+                with localStorage persistence, dark theme, interactive image gallery with
+                Swiper. 70% TypeScript codebase.
+              </p>
+              <div class="project__links">
+                <a href="https://sonik-boom71.github.io/react-phone-catalog/" target="_blank">Live Demo</a>
+                <a href="https://github.com/sonik-boom71/react-phone-catalog" target="_blank">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project__tech">HTML5 · SCSS (BEM) · JavaScript · Parcel</div>
+              <h3>Museum Landing (NAMU)</h3>
+              <p>
+                Landing page for the National Art Museum of Ukraine. Semantic HTML5 with
+                ARIA accessibility, mobile-first responsive design, smooth animations,
+                language switching (UA/EN) with localStorage, form validation with regex,
+                interactive burger menu.
+              </p>
+              <div class="project__links">
+                <a href="https://sonik-boom71.github.io/museum-landing/" target="_blank">Live Demo</a>
+                <a href="https://github.com/sonik-boom71/museum-landing" target="_blank">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project__tech">HTML5 · SCSS (BEM) · JavaScript · Parcel</div>
+              <h3>MyBike Landing Page</h3>
+              <p>
+                Professional landing page for an electric bike brand. Mobile-first design,
+                smooth scroll navigation, interactive product comparison cards, animated
+                mobile menu, photo gallery sections, and clean BEM architecture.
+              </p>
+              <div class="project__links">
+                <a href="https://sonik-boom71.github.io/mybike-landing/" target="_blank">Live Demo</a>
+                <a href="https://github.com/sonik-boom71/mybike-landing" target="_blank">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project__tech">JavaScript (ES6+) · SCSS · Cypress · Jest</div>
+              <h3>2048 Puzzle Game</h3>
+              <p>
+                Browser implementation of the classic 2048 puzzle. Object-oriented
+                architecture (Game class), complete game logic and mechanics, score
+                tracking, win/lose detection, keyboard controls, end-to-end tests
+                with Cypress, and unit tests with Jest.
+              </p>
+              <div class="project__links">
+                <a href="https://github.com/sonik-boom71" target="_blank">GitHub</a>
+              </div>
+            </article>
+
+            <article class="project reveal">
+              <div class="project__tech">HTML5 · CSS3 · JavaScript</div>
+              <h3>Personal Resume Website</h3>
+              <p>
+                This very site — a clean, semantic personal portfolio. Responsive CSS3
+                design, scroll-reveal animations, interactive skill tags, and personal
+                branding. Cross-browser compatible.
+              </p>
+              <div class="project__links">
+                <a href="https://sonik-boom71.github.io/" target="_blank">Live Demo</a>
+                <a href="https://github.com/sonik-boom71/resumesite" target="_blank">GitHub</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <div class="container">
+          <h2 class="section__title reveal">Education</h2>
+
+          <div class="edu-grid">
+            <article class="panel reveal">
+              <h3>Mate Academy</h3>
+              <p class="job__company">Full-Stack Developer Program</p>
+              <p class="job__period" style="margin-top: 6px;">2025 — 2027</p>
+              <p style="margin-top: 12px;">
+                Intensive program focused on practical, real-world projects. Studying
+                React, TypeScript, modern JavaScript patterns, collaboration, code review,
+                testing and quality assurance.
+              </p>
+            </article>
+
+            <article class="panel reveal">
+              <h3>National University of Food Technologies</h3>
+              <p class="job__company">Bachelor of Science · Culinary Arts</p>
+              <p class="job__period" style="margin-top: 6px;">Sep 2024 — Jun 2028</p>
+              <p style="margin-top: 12px;">
+                GPA: 80. Activities: Volleyball, participation in events and
+                group organization management.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacts">
+        <div class="container">
+          <h2 class="section__title reveal">Contacts</h2>
+
+          <div class="contacts">
+            <article class="contact-card reveal">
+              <h3>GitHub</h3>
+              <p>
+                <a href="https://github.com/sonik-boom71" target="_blank">
+                  github.com/sonik-boom71
+                </a>
+              </p>
+            </article>
+
+            <article class="contact-card reveal">
+              <h3>LinkedIn</h3>
+              <p>
+                <a
+                  href="https://linkedin.com/in/maxim-davidiuk-73a38a399/"
+                  target="_blank"
+                >
+                  maxim-davidiuk-73a38a399
+                </a>
+              </p>
+            </article>
+
+            <article class="contact-card reveal">
+              <h3>Telegram</h3>
+              <p>
+                <a href="https://t.me/TeaErlGrey" target="_blank">
+                  @TeaErlGrey
+                </a>
+              </p>
+            </article>
+          </div>
+
+          <div class="languages reveal">
+            <span class="skill">🇺🇦 Ukrainian — Native</span>
+            <span class="skill">🇷🇺 Russian — Fluent</span>
+            <span class="skill">🇬🇧 English — Professional</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2026 Maxim Davidiuk — Frontend Developer</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
