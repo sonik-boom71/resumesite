@@ -1,25 +1,55 @@
-const skills = [
-  'HTML',
-  'CSS',
-  'JavaScript',
-  'PHP',
-  'SQL',
-  'Node.js',
-  'Angular',
-  'Адаптивна верстка',
-  'Базова робота з Git',
-  'Самонавчання',
-  'Швидке освоєння нових тем',
+const skillsFrontend = [
+  'React 18',
+  'React Router',
+  'React Hooks',
+  'TypeScript (Advanced)',
+  'JavaScript (ES6+)',
+  'HTML5',
+  'CSS3 / SCSS',
+  'BEM Methodology',
+  'Context API',
+  'Responsive Design',
+  'Mobile-first',
+  'ARIA & Accessibility',
+  'Animations & Transitions',
+  'Form Validation',
+  'Local Storage',
 ];
 
-const skillsList = document.getElementById('skillsList');
+const skillsTools = [
+  'Git & GitHub',
+  'Vite',
+  'Parcel',
+  'npm',
+  'ESLint',
+  'Prettier',
+  'Stylelint',
+  'GitHub Pages',
+  'VS Code',
+];
 
-skills.forEach((item) => {
-  const tag = document.createElement('span');
-  tag.className = 'skill';
-  tag.textContent = item;
-  skillsList.append(tag);
-});
+const skillsTesting = [
+  'Cypress (E2E)',
+  'Jest (Unit)',
+  'Manual Browser Testing',
+  'Performance Optimization',
+  'Accessibility Standards',
+];
+
+function renderSkills(ids, list) {
+  const container = document.getElementById(ids);
+  if (!container) return;
+  list.forEach((item) => {
+    const tag = document.createElement('span');
+    tag.className = 'skill';
+    tag.textContent = item;
+    container.append(tag);
+  });
+}
+
+renderSkills('skillsFrontend', skillsFrontend);
+renderSkills('skillsTools', skillsTools);
+renderSkills('skillsTesting', skillsTesting);
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -29,11 +59,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.15,
-  }
+  { threshold: 0.12 }
 );
 
-document.querySelectorAll('.reveal').forEach((element) => {
-  observer.observe(element);
-});
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));

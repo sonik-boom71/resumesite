@@ -272,6 +272,88 @@ h1 {
   margin: 0 0 8px;
 }
 
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.job {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 22px 26px;
+}
+
+.job__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.job__header h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.job__company {
+  margin: 0;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+.job__period {
+  color: var(--muted);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.job__location {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.job p:last-child {
+  color: #d1d5db;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.project__tech {
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
 .footer {
   padding: 30px 0 50px;
   color: var(--muted);
@@ -293,7 +375,9 @@ h1 {
   .hero__grid,
   .panels,
   .projects,
-  .contacts {
+  .contacts,
+  .skills-grid,
+  .edu-grid {
     grid-template-columns: 1fr;
   }
 
