@@ -135,12 +135,12 @@ const COMPONENTS = [
     target: '#projects', name: 'ProjectsGrid',
     description: 'Portfolio cards with tech stack and live links.',
     props: [
-      ['projects', 'array', '5 items'],
+      ['projects', 'array', '6 items'],
       ['layout', 'string', '"grid"'],
     ],
     state: [['hoveredCard', 'number']],
     deps: '—',
-    renders: 'section#projects > Projects > [Project × 5]',
+    renders: 'section#projects > Projects > [Project × 6]',
   },
   {
     target: '#sandbox', name: 'LiveSandbox',
