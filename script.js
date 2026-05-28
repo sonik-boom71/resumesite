@@ -135,12 +135,12 @@ const COMPONENTS = [
     target: '#projects', name: 'ProjectsGrid',
     description: 'Portfolio cards with tech stack and live links.',
     props: [
-      ['projects', 'array', '7 items'],
+      ['projects', 'array', '8 items'],
       ['layout', 'string', '"grid"'],
     ],
-    state: [['hoveredCard', 'number']],
+    state: [['hoveredCard', 'number'], ['openDemo', 'string']],
     deps: '—',
-    renders: 'section#projects > Projects > [Project × 7]',
+    renders: 'section#projects > Projects > [Project × 8]',
   },
   {
     target: '#sandbox', name: 'LiveSandbox',
@@ -283,6 +283,17 @@ if (treeToggle) {
     treeToggle.textContent = tree.classList.contains('is-collapsed') ? '+' : '−';
   });
 }
+
+// Slide-out demo panels
+document.querySelectorAll('.demo-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const panel = document.getElementById(btn.dataset.demo);
+    if (!panel) return;
+    const isOpen = panel.classList.toggle('is-open');
+    btn.classList.toggle('is-open', isOpen);
+    btn.textContent = isOpen ? '▾ Hide Demo' : '▸ Show Demo';
+  });
+});
 
 // Animated Sine Waves Canvas
 (function initWaves() {

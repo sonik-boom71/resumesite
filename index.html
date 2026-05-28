@@ -344,6 +344,45 @@
             </article>
 
             <article class="project reveal">
+              <div class="project__tech">Node.js · Telegraf · Cheerio · AI (Groq/Gemini)</div>
+              <h3>GameReviewBot</h3>
+              <p>
+                Telegram bot that aggregates game reviews from Steam and OpenCritic,
+                then uses AI to summarize player feedback and deliver a clear verdict —
+                buy now, worth it, wait for a sale, or skip. Pulls Steam rating %,
+                review counts, pricing and discounts; scrapes OpenCritic critic scores;
+                outputs formatted markdown with pros, cons and a final recommendation.
+              </p>
+              <div class="project__links">
+                <button class="demo-toggle" data-demo="botDemo">▸ Show Demo</button>
+                <a href="https://github.com/sonik-boom71/GameReviewBot" target="_blank">GitHub</a>
+                <a href="https://t.me/TeaErlGrey" target="_blank">Contact</a>
+              </div>
+
+              <div class="demo-panel" id="botDemo">
+                <div class="tg-chat">
+                  <div class="tg-msg tg-msg--out">/review Elden Ring</div>
+                  <div class="tg-msg tg-msg--in">
+                    <strong>🎮 ELDEN RING</strong><br />
+                    ━━━━━━━━━━━━━━<br />
+                    ⭐ Steam: <b>92%</b> positive (742,103 reviews)<br />
+                    🎯 OpenCritic: <b>96</b> / Mighty · 94% recommend<br />
+                    💰 $59.99 <span class="tg-sale">−20% → $47.99</span><br /><br />
+                    👍 <b>Players praise:</b><br />
+                    • Vast, breathtaking open world<br />
+                    • Deep, rewarding combat<br />
+                    • Unforgettable boss design<br /><br />
+                    👎 <b>Common complaints:</b><br />
+                    • Steep difficulty curve<br />
+                    • Occasional PC performance dips<br /><br />
+                    🤖 <b>AI Verdict:</b> <span class="tg-verdict">BUY CONFIDENTLY</span><br />
+                    A genre-defining masterpiece — one of the best open-world RPGs ever made.
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="project reveal">
               <div class="project__tech">HTML5 · CSS3 · JavaScript</div>
               <h3>Personal Resume Website</h3>
               <p>
