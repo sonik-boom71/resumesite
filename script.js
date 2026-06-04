@@ -80,23 +80,6 @@ const COMPONENTS = [
     renders: 'section.hero > [PhotoCard, HeroContent]',
   },
   {
-    target: '.wave-block', name: 'WaveCanvas',
-    description: 'Animated sine waves on Canvas, reacts to mouse position.',
-    props: [
-      ['layers', 'number', '5'],
-      ['amplitude', 'number', '18–88px'],
-      ['accentColor', 'string', '"#facc15"'],
-      ['interactive', 'boolean', 'true'],
-    ],
-    state: [
-      ['mouseX', 'number'],
-      ['mouseY', 'number'],
-      ['time', 'number'],
-    ],
-    deps: 'requestAnimationFrame, Canvas 2D',
-    renders: 'canvas[width × 260px]',
-  },
-  {
     target: '#about', name: 'AboutSection',
     description: '3-column panel grid with hover lift.',
     props: [
@@ -295,96 +278,6 @@ document.querySelectorAll('.demo-toggle').forEach((btn) => {
   });
 });
 
-// Animated Sine Waves Canvas
-(function initWaves() {
-  const canvas = document.getElementById('waveCanvas');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  const dpr = window.devicePixelRatio || 1;
-  let width = 0;
-  let height = 0;
-  let mouseX = 0.5;
-  let mouseY = 0.5;
-  let targetMouseX = 0.5;
-  let targetMouseY = 0.5;
-
-  function resize() {
-    const rect = canvas.getBoundingClientRect();
-    width = rect.width;
-    height = rect.height;
-    canvas.width = width * dpr;
-    canvas.height = height * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-
-  canvas.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    targetMouseX = (event.clientX - rect.left) / rect.width;
-    targetMouseY = (event.clientY - rect.top) / rect.height;
-  });
-
-  canvas.addEventListener('mouseleave', () => {
-    targetMouseX = 0.5;
-    targetMouseY = 0.5;
-  });
-
-  canvas.addEventListener('touchmove', (event) => {
-    if (event.touches[0]) {
-      const rect = canvas.getBoundingClientRect();
-      targetMouseX = (event.touches[0].clientX - rect.left) / rect.width;
-      targetMouseY = (event.touches[0].clientY - rect.top) / rect.height;
-    }
-  }, { passive: true });
-
-  let time = 0;
-  const layers = 5;
-
-  function draw() {
-    // Smooth mouse follow
-    mouseX += (targetMouseX - mouseX) * 0.08;
-    mouseY += (targetMouseY - mouseY) * 0.08;
-
-    ctx.clearRect(0, 0, width, height);
-
-    for (let layer = 0; layer < layers; layer++) {
-      const t = layer / (layers - 1);
-      const amplitude = (18 + mouseY * 70) * (1 - t * 0.35);
-      const frequency = (0.006 + mouseX * 0.018) * (1 + t * 0.4);
-      const phase = time * 0.018 + layer * 0.7;
-      const yBase = height * (0.25 + t * 0.5);
-      const baseAlpha = 0.55 - layer * 0.08;
-
-      ctx.beginPath();
-      ctx.moveTo(0, yBase);
-      for (let x = 0; x <= width; x += 2) {
-        const y = yBase + Math.sin(x * frequency + phase) * amplitude
-                        + Math.sin(x * frequency * 0.5 + phase * 0.7) * (amplitude * 0.3);
-        ctx.lineTo(x, y);
-      }
-
-      const gradient = ctx.createLinearGradient(0, 0, width, 0);
-      gradient.addColorStop(0,   `rgba(250, 204, 21, ${baseAlpha * 0.15})`);
-      gradient.addColorStop(0.5, `rgba(250, 204, 21, ${baseAlpha})`);
-      gradient.addColorStop(1,   `rgba(250, 204, 21, ${baseAlpha * 0.15})`);
-
-      ctx.strokeStyle = gradient;
-      ctx.lineWidth = 1.5 + (1 - t) * 0.8;
-      ctx.shadowColor = 'rgba(250, 204, 21, 0.35)';
-      ctx.shadowBlur = 8;
-      ctx.stroke();
-    }
-
-    ctx.shadowBlur = 0;
-    time += 1;
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-})();
 
 // Live Code Sandbox
 const DEFAULT_CODE = {
