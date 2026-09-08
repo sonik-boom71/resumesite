@@ -95,7 +95,7 @@ const COMPONENTS = [
     description: 'Vertical work history with company/period/role.',
     props: [
       ['jobs', 'array', '4 items'],
-      ['celebrationGif', 'string', '"gif-f1.gif"'],
+      ['celebrationGif', 'string', '"gif-supernatural.gif"'],
     ],
     state: [['currentJob', 'number']],
     deps: '—',
