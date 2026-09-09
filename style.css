@@ -370,6 +370,30 @@ h1 {
   margin-bottom: 4px;
 }
 
+.job__title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.job__thumb {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+}
+
+.job__thumb--photo {
+  object-fit: cover;
+}
+
+.job__thumb--logo {
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+}
+
 .job__header h3 {
   margin: 0 0 4px;
   font-size: 20px;
