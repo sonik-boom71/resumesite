@@ -399,6 +399,23 @@ h1 {
   margin: 0;
 }
 
+.job__highlight {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.job__highlight-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
