@@ -36,6 +36,15 @@ const skillsTesting = [
   'Accessibility Standards',
 ];
 
+const skillsAutomation = [
+  'n8n Workflow Automation',
+  'LLM APIs (ChatGPT, Gemini)',
+  'Prompt Engineering',
+  'REST API Integration',
+  'Cloud Functions',
+  'Node.js Scripting',
+];
+
 function renderSkills(ids, list) {
   const container = document.getElementById(ids);
   if (!container) return;
@@ -50,6 +59,7 @@ function renderSkills(ids, list) {
 renderSkills('skillsFrontend', skillsFrontend);
 renderSkills('skillsTools', skillsTools);
 renderSkills('skillsTesting', skillsTesting);
+renderSkills('skillsAutomation', skillsAutomation);
 
 const observer = new IntersectionObserver(
   (entries) => {
