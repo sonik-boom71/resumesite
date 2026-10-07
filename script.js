@@ -260,6 +260,19 @@ function buildTree() {
 const modeToggle = document.getElementById('modeToggle');
 if (modeToggle) {
   modeToggle.addEventListener('click', () => {
+    // cross-fade between modes where the View Transitions API exists
+    if (document.startViewTransition && !document.hidden) {
+      // if the browser skips the animation it rejects these promises;
+      // the mode still switches, so just swallow the rejections
+      const transition = document.startViewTransition(switchMode);
+      transition.ready.catch(() => {});
+      transition.finished.catch(() => {});
+    } else {
+      switchMode();
+    }
+  });
+
+  function switchMode() {
     const isOn = document.body.classList.toggle('engineering-mode');
     modeToggle.setAttribute('aria-pressed', isOn ? 'true' : 'false');
     const icon = modeToggle.querySelector('.mode-toggle__icon');
@@ -279,7 +292,7 @@ if (modeToggle) {
       label.textContent = 'Presentation Mode';
       removeOverlays();
     }
-  });
+  }
 }
 
 const treeToggle = document.getElementById('treeToggle');
