@@ -115,16 +115,6 @@ const COMPONENTS = [
     renders: 'section#about > Panels > [Panel × 3]',
   },
   {
-    target: '#experience', name: 'Timeline',
-    description: 'Vertical work history with company/period/role.',
-    props: [
-      ['jobs', 'array', '4 items'],
-    ],
-    state: [['currentJob', 'number']],
-    deps: '—',
-    renders: 'section#experience > [Job × 4]',
-  },
-  {
     target: '#skills', name: 'SkillsGrid',
     description: 'Three categorized skill clouds.',
     props: [
@@ -137,6 +127,16 @@ const COMPONENTS = [
     state: [['rendered', 'boolean']],
     deps: '—',
     renders: 'section#skills > SkillsGrid > [Panel × 3]',
+  },
+  {
+    target: '#experience', name: 'Timeline',
+    description: 'Vertical work history with company/period/role.',
+    props: [
+      ['jobs', 'array', '4 items'],
+    ],
+    state: [['currentJob', 'number']],
+    deps: '—',
+    renders: 'section#experience > [Job × 4]',
   },
   {
     target: '#projects', name: 'ProjectsGrid',
