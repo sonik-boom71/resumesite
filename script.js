@@ -119,11 +119,10 @@ const COMPONENTS = [
     description: 'Vertical work history with company/period/role.',
     props: [
       ['jobs', 'array', '4 items'],
-      ['celebrationGif', 'string', '"gif-supernatural.gif"'],
     ],
     state: [['currentJob', 'number']],
     deps: '—',
-    renders: 'section#experience > [Job × 4, GifCelebrate]',
+    renders: 'section#experience > [Job × 4]',
   },
   {
     target: '#skills', name: 'SkillsGrid',
@@ -178,14 +177,14 @@ const COMPONENTS = [
   },
   {
     target: '#contacts', name: 'ContactsBlock',
-    description: 'Contact cards, FBI avatar and language tags.',
+    description: 'Contact cards, status line and language tags.',
     props: [
       ['contacts', 'array', '3 items'],
       ['languages', 'array', '3 items'],
     ],
     state: [],
     deps: '—',
-    renders: 'section#contacts > [Contacts, GifFbi, Languages]',
+    renders: 'section#contacts > [Contacts, Status, Languages]',
   },
 ];
 

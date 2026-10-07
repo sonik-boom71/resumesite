@@ -1,0 +1,338 @@
+/* "Snow Tiger" theme — palette taken from the white tiger cubs nihonga painting:
+   misty steel-blue sky, snow-white fur, ink-brown stripes, red seal, gold signature.
+   Loaded after style.css; remove its <link> in index.html to go back to the dark theme. */
+
+:root {
+  --bg: #dfe5ea;
+  --card: rgba(250, 251, 252, 0.72);
+  --text: #2a2420;
+  --muted: #5f6d7c;
+  --accent: #b5342b;
+  --gold: #b8923f;
+  --sky: #6f8ba6;
+  --sky-deep: #3b5874;
+  --snow: #f7f8f9;
+  --ink-soft: #4a403a;
+  --line: rgba(42, 36, 32, 0.12);
+  --shadow: 0 18px 40px rgba(53, 74, 98, 0.16);
+  --serif: "Shippori Mincho", "Noto Serif JP", Georgia, serif;
+}
+
+body {
+  background:
+    linear-gradient(180deg,
+      #6f8ba6 0px,
+      #93aabf 380px,
+      #c3d0dc 900px,
+      #e2e6e8 1500px,
+      #ece6da 100%);
+  color: var(--text);
+}
+
+body::before {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55), transparent 70%);
+  opacity: 0.7;
+}
+
+body::after {
+  background: radial-gradient(circle, rgba(232, 214, 196, 0.6), transparent 70%);
+  opacity: 0.6;
+}
+
+.side-rail {
+  background: linear-gradient(180deg, transparent, rgba(42, 36, 32, 0.35), transparent);
+}
+
+/* ---------- Typography ---------- */
+
+h1,
+h2,
+h3,
+.logo {
+  font-family: var(--serif);
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.section__title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  font-size: 32px;
+}
+
+/* brush-like "stripe" under section titles */
+.section__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px 1px 6px 1px;
+  background: linear-gradient(90deg, var(--text) 0 70%, transparent 70% 76%, var(--text) 76%);
+  opacity: 0.85;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+  background: rgba(247, 248, 249, 0.72);
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav a {
+  color: var(--ink-soft);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Cards ---------- */
+
+.photo-card,
+.panel,
+.project,
+.contact-card,
+.job,
+.sandbox,
+.gif-strip,
+.gif-inline {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.panel:hover,
+.project:hover,
+.contact-card:hover,
+.job:hover {
+  border-color: rgba(181, 52, 43, 0.35);
+  box-shadow: 0 22px 50px rgba(181, 52, 43, 0.1), var(--shadow);
+}
+
+.photo-card img {
+  filter: saturate(0.92);
+}
+
+.panel p,
+.project p,
+.contact-card p,
+.job p:last-child,
+.hero__text {
+  color: var(--ink-soft);
+}
+
+/* ---------- Hero ---------- */
+
+.badge {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--accent);
+  border: 1px solid rgba(181, 52, 43, 0.25);
+}
+
+.badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.hero__subtitle {
+  color: var(--sky-deep);
+}
+
+.button {
+  border: 1px solid var(--line);
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--snow);
+  border-color: transparent;
+  box-shadow: 0 10px 24px rgba(181, 52, 43, 0.25);
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+}
+
+.button--secondary:hover {
+  border-color: var(--gold);
+}
+
+/* ---------- Skills ---------- */
+
+.skill {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(79, 109, 138, 0.22);
+  color: var(--text);
+}
+
+.skill:hover {
+  border-color: var(--sky-deep);
+}
+
+/* ---------- Experience ---------- */
+
+.job__company,
+.project__tech,
+.job__highlight-icon {
+  color: var(--accent);
+}
+
+.job__period,
+.job__location {
+  color: var(--muted);
+}
+
+.job__highlight {
+  border-top: 1px dashed rgba(42, 36, 32, 0.18);
+  color: var(--text);
+}
+
+.job__thumb {
+  border: 1px solid var(--line);
+}
+
+/* ---------- Links ---------- */
+
+.project__links a,
+.contact-card a {
+  color: var(--sky-deep);
+  text-decoration-color: rgba(79, 109, 138, 0.4);
+}
+
+.project__links a:hover,
+.contact-card a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Floating toggles ---------- */
+
+.mode-toggle {
+  background: rgba(247, 248, 249, 0.9);
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(53, 74, 98, 0.2);
+}
+
+.mode-toggle:hover {
+  border-color: var(--accent);
+}
+
+.demo-toggle {
+  background: rgba(181, 52, 43, 0.08);
+  border: 1px solid rgba(181, 52, 43, 0.3);
+  color: var(--accent);
+}
+
+.demo-toggle:hover {
+  background: rgba(181, 52, 43, 0.15);
+}
+
+.demo-toggle.is-open {
+  background: var(--accent);
+  color: var(--snow);
+}
+
+/* ---------- Sandbox ---------- */
+
+.sandbox__tabs {
+  background: rgba(79, 109, 138, 0.1);
+}
+
+.sandbox__tab {
+  color: var(--muted);
+}
+
+.sandbox__tab:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.sandbox__tab.is-active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--snow);
+}
+
+.sandbox__reset {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--muted);
+}
+
+.sandbox__reset:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.sandbox__editor {
+  background: #2a2420;
+  color: #efe9df;
+}
+
+.sandbox__editor:focus {
+  background: #241f1b;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  color: var(--muted);
+}
+
+/* red hanko seal next to the footer text */
+.footer p::before {
+  content: "M";
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 700;
+  vertical-align: middle;
+  transform: rotate(-4deg);
+}
+
+.gif-fbi p {
+  color: var(--muted);
+}
+
+/* ---------- Art strips (replace the old GIFs) ---------- */
+
+.gif-strip,
+.gif-inline {
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.gif-strip img,
+.gif-inline img {
+  filter: saturate(0.95) contrast(1.02);
+}
+
+.gif-fbi {
+  margin-top: 22px;
+}
