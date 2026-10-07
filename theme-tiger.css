@@ -276,22 +276,104 @@ h1 {
   color: var(--muted);
 }
 
-/* gold "signature" seal next to the footer text, like the artist's mark */
-.footer p::before {
-  content: "M";
-  display: inline-grid;
-  place-items: center;
-  width: 22px;
-  height: 22px;
-  margin-right: 10px;
-  border: 2px solid var(--gold-ink);
-  border-radius: 3px;
-  color: var(--gold-ink);
+/* animated handwritten signature above the copyright, drawn when scrolled into view */
+.signature {
+  max-width: 440px;
+  margin: 0 auto 4px;
+}
+
+.signature svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.signature__name {
+  font-family: "Mrs Saint Delafield", cursive;
+  font-size: 118px;
+  fill: var(--accent);
+  fill-opacity: 0;
+  stroke: var(--accent);
+  stroke-width: 1.1;
+  stroke-dasharray: 2600;
+  stroke-dashoffset: 2600;
+}
+
+.signature__line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+}
+
+/* gold seal, like the artist's mark on the painting */
+.signature__seal {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1.6) rotate(-4deg);
+}
+
+.signature__seal rect {
+  fill: none;
+  stroke: var(--gold-ink);
+  stroke-width: 2.5;
+}
+
+.signature__seal text {
+  fill: var(--gold-ink);
   font-family: var(--serif);
-  font-size: 13px;
+  font-size: 22px;
   font-weight: 700;
-  vertical-align: middle;
-  transform: rotate(-4deg);
+}
+
+.signature.is-visible .signature__name {
+  animation: sigDraw 3.6s cubic-bezier(0.55, 0.1, 0.35, 1) 0.3s forwards,
+    sigInk 1.2s ease 3.3s forwards;
+}
+
+.signature.is-visible .signature__line {
+  animation: sigDraw 1.1s ease-out 3.6s forwards;
+}
+
+.signature.is-visible .signature__seal {
+  animation: sigStamp 0.45s cubic-bezier(0.3, 1.6, 0.5, 1) 4.6s forwards;
+}
+
+@keyframes sigDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes sigInk {
+  to { fill-opacity: 1; stroke-width: 0.4; }
+}
+
+@keyframes sigStamp {
+  to { opacity: 1; transform: scale(1) rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature__name,
+  .signature.is-visible .signature__name {
+    animation: none;
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+    stroke-width: 0.4;
+  }
+  .signature__line,
+  .signature.is-visible .signature__line {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .signature__seal,
+  .signature.is-visible .signature__seal {
+    animation: none;
+    opacity: 1;
+    transform: rotate(-4deg);
+  }
 }
 
 .gif-fbi p {
