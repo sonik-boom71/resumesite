@@ -269,6 +269,11 @@ if (modeToggle) {
       label.textContent = 'Engineering Mode';
       buildTree();
       injectOverlays();
+      // no free side margin for the tree on narrow screens: start it collapsed
+      const tree = document.getElementById('componentTree');
+      const narrow = window.innerWidth < 1640;
+      tree.classList.toggle('is-collapsed', narrow);
+      if (treeToggle) treeToggle.textContent = narrow ? '+' : '−';
     } else {
       icon.textContent = '🎨';
       label.textContent = 'Presentation Mode';

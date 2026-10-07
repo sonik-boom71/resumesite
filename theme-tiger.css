@@ -307,3 +307,121 @@ h1 {
 .gif-fbi {
   margin-top: 22px;
 }
+
+/* ---------- Mode toggle position ---------- */
+
+/* keep the toggle off the nav: bottom-right corner */
+.mode-toggle {
+  top: auto;
+  bottom: 18px;
+  right: 18px;
+}
+
+/* ---------- Engineering Mode: "blueprint on rice paper" ---------- */
+
+.engineering-mode {
+  --eng-ink: rgba(42, 36, 32, 0.07);
+  --eng-line: rgba(181, 52, 43, 0.35);
+}
+
+body.engineering-mode {
+  background:
+    linear-gradient(var(--eng-ink) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, var(--eng-ink) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(180deg, #dfe6ec 0%, #eef0ef 40%, #efeae0 100%);
+}
+
+.engineering-mode .section .container,
+.engineering-mode .hero .container {
+  border: 1px dashed var(--eng-line);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.engineering-mode .mode-toggle {
+  background: var(--text);
+  color: var(--snow);
+  border-color: var(--text);
+}
+
+.component-tag,
+.component-info {
+  background: var(--snow);
+  border: 1px solid var(--eng-line);
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(53, 74, 98, 0.12);
+}
+
+.component-info:hover {
+  background: var(--accent);
+  color: var(--snow);
+}
+
+.component-info .component-docs,
+.component-tree {
+  background: rgba(250, 250, 248, 0.97);
+  border: 1px solid rgba(42, 36, 32, 0.15);
+  color: var(--text);
+  box-shadow: 0 20px 50px rgba(53, 74, 98, 0.22);
+}
+
+.component-docs h4,
+.component-docs .prop-name,
+.component-tree__head {
+  color: var(--accent);
+}
+
+.component-docs .doc-section,
+.component-tree__head {
+  border-color: rgba(42, 36, 32, 0.12);
+}
+
+.component-docs .doc-label { color: var(--muted); }
+.component-docs .type-string { color: #3f7d4e; }
+.component-docs .type-boolean { color: var(--sky-deep); }
+.component-docs .type-number { color: #b0662a; }
+.component-docs .type-array { color: #7a4f8f; }
+.component-docs .type-object { color: #a8436b; }
+.component-docs .default-val { color: #8a8580; }
+
+.component-tree__list li {
+  color: var(--text);
+}
+
+.component-tree__list li::before {
+  color: rgba(181, 52, 43, 0.5);
+}
+
+.component-tree__list li:hover {
+  background: rgba(181, 52, 43, 0.08);
+  color: var(--accent);
+}
+
+.component-tree__close {
+  color: var(--muted);
+  border-color: rgba(42, 36, 32, 0.15);
+}
+
+.section.is-highlighted .container,
+.hero.is-highlighted .container {
+  box-shadow: 0 0 0 2px var(--accent), 0 30px 60px rgba(181, 52, 43, 0.15);
+}
+
+.dev-badge {
+  background: var(--snow);
+  border: 1px solid var(--eng-line);
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(53, 74, 98, 0.12);
+}
+
+.engineering-mode .footer p::after {
+  color: var(--accent);
+}
+
+/* the tree covers content when the side margins are narrow */
+@media (max-width: 1640px) {
+  .component-tree {
+    top: auto;
+    bottom: 60px;
+    max-height: 45vh;
+  }
+}
