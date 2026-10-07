@@ -33,7 +33,7 @@ Built by hand, deployed on Vercel, fits in your pocket on mobile.
 
 🔧 **Engineering Mode** — top-right corner. Flip the switch. The site re-renders as a component library. Each section gets a `<Hero />` tag. Hover the `ℹ` icon and you see real React-style documentation — props, state, dependencies, what renders inside. A live component tree appears on the left. The footer adds a counter. JetBrains Mono everywhere. Toggle back to Presentation Mode and the site looks like nothing happened.
 
-🧭 **How I Work** — section "How I Work". Four steps from idea to production — Understand, Design, Build, Ship — numbered with kanji 一 二 三 四 stamped like red hanko seals.
+🧭 **How I Work** — section "How I Work". Four steps from idea to production — Understand, Design, Build, Ship — numbered with kanji 一 二 三 四 stamped like indigo hanko seals.
 
 🕹️ **The Konami Code** works. `↑ ↑ ↓ ↓ ← → ← → B A` — somewhere on the site. Try it.
 

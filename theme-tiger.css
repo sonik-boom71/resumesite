@@ -1,5 +1,5 @@
 /* "Snow Tiger" theme — palette taken from the white tiger cubs nihonga painting:
-   misty steel-blue sky, snow-white fur, ink-brown stripes, red seal, gold signature.
+   misty steel-blue sky, snow-white fur, ink-brown stripes, gold signature; accent is the deep indigo of the lilies.
    Loaded after style.css; remove its <link> in index.html to go back to the dark theme. */
 
 :root {
@@ -7,8 +7,9 @@
   --card: rgba(250, 251, 252, 0.72);
   --text: #2a2420;
   --muted: #5f6d7c;
-  --accent: #b5342b;
+  --accent: #1f3a5f;
   --gold: #b8923f;
+  --gold-ink: #9a7a35;
   --sky: #6f8ba6;
   --sky-deep: #3b5874;
   --snow: #f7f8f9;
@@ -121,8 +122,8 @@ h1 {
 .project:hover,
 .contact-card:hover,
 .job:hover {
-  border-color: rgba(181, 52, 43, 0.35);
-  box-shadow: 0 22px 50px rgba(181, 52, 43, 0.1), var(--shadow);
+  border-color: rgba(31, 58, 95, 0.35);
+  box-shadow: 0 22px 50px rgba(31, 58, 95, 0.1), var(--shadow);
 }
 
 .photo-card img {
@@ -142,7 +143,7 @@ h1 {
 .badge {
   background: rgba(255, 255, 255, 0.7);
   color: var(--accent);
-  border: 1px solid rgba(181, 52, 43, 0.25);
+  border: 1px solid rgba(31, 58, 95, 0.25);
 }
 
 .badge::before {
@@ -165,7 +166,7 @@ h1 {
   background: var(--accent);
   color: var(--snow);
   border-color: transparent;
-  box-shadow: 0 10px 24px rgba(181, 52, 43, 0.25);
+  box-shadow: 0 10px 24px rgba(31, 58, 95, 0.25);
 }
 
 .button--secondary {
@@ -191,8 +192,14 @@ h1 {
 
 /* ---------- Experience ---------- */
 
-.job__company,
+/* small secondary text uses the sky blue; deep indigo is reserved for real accents */
+.job p.job__company,
+.panel p.job__company,
 .project__tech,
+.process__tools {
+  color: var(--sky-deep);
+}
+
 .job__highlight-icon {
   color: var(--accent);
 }
@@ -238,13 +245,13 @@ h1 {
 }
 
 .demo-toggle {
-  background: rgba(181, 52, 43, 0.08);
-  border: 1px solid rgba(181, 52, 43, 0.3);
+  background: rgba(31, 58, 95, 0.08);
+  border: 1px solid rgba(31, 58, 95, 0.3);
   color: var(--accent);
 }
 
 .demo-toggle:hover {
-  background: rgba(181, 52, 43, 0.15);
+  background: rgba(31, 58, 95, 0.15);
 }
 
 .demo-toggle.is-open {
@@ -269,7 +276,7 @@ h1 {
   color: var(--muted);
 }
 
-/* red hanko seal next to the footer text */
+/* gold "signature" seal next to the footer text, like the artist's mark */
 .footer p::before {
   content: "M";
   display: inline-grid;
@@ -277,9 +284,9 @@ h1 {
   width: 22px;
   height: 22px;
   margin-right: 10px;
-  border: 2px solid var(--accent);
+  border: 2px solid var(--gold-ink);
   border-radius: 3px;
-  color: var(--accent);
+  color: var(--gold-ink);
   font-family: var(--serif);
   font-size: 13px;
   font-weight: 700;
@@ -321,7 +328,7 @@ h1 {
 
 .engineering-mode {
   --eng-ink: rgba(42, 36, 32, 0.07);
-  --eng-line: rgba(181, 52, 43, 0.35);
+  --eng-line: rgba(31, 58, 95, 0.35);
 }
 
 body.engineering-mode {
@@ -388,11 +395,11 @@ body.engineering-mode {
 }
 
 .component-tree__list li::before {
-  color: rgba(181, 52, 43, 0.5);
+  color: rgba(31, 58, 95, 0.5);
 }
 
 .component-tree__list li:hover {
-  background: rgba(181, 52, 43, 0.08);
+  background: rgba(31, 58, 95, 0.08);
   color: var(--accent);
 }
 
@@ -403,7 +410,7 @@ body.engineering-mode {
 
 .section.is-highlighted .container,
 .hero.is-highlighted .container {
-  box-shadow: 0 0 0 2px var(--accent), 0 30px 60px rgba(181, 52, 43, 0.15);
+  box-shadow: 0 0 0 2px var(--accent), 0 30px 60px rgba(31, 58, 95, 0.15);
 }
 
 .dev-badge {
