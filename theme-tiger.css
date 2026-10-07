@@ -108,7 +108,7 @@ h1 {
 .project,
 .contact-card,
 .job,
-.sandbox,
+.process__step,
 .gif-strip,
 .gif-inline {
   background: var(--card);
@@ -252,44 +252,15 @@ h1 {
   color: var(--snow);
 }
 
-/* ---------- Sandbox ---------- */
+/* ---------- How I Work ---------- */
 
-.sandbox__tabs {
-  background: rgba(79, 109, 138, 0.1);
-}
-
-.sandbox__tab {
-  color: var(--muted);
-}
-
-.sandbox__tab:hover {
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.5);
-}
-
-.sandbox__tab.is-active {
-  background: var(--text);
-  border-color: var(--text);
-  color: var(--snow);
-}
-
-.sandbox__reset {
+.process__num {
+  font-family: var(--serif);
   background: rgba(255, 255, 255, 0.6);
-  color: var(--muted);
 }
 
-.sandbox__reset:hover {
-  color: var(--text);
-  border-color: var(--accent);
-}
-
-.sandbox__editor {
-  background: #2a2420;
-  color: #efe9df;
-}
-
-.sandbox__editor:focus {
-  background: #241f1b;
+.process__step p {
+  color: var(--ink-soft);
 }
 
 /* ---------- Footer ---------- */

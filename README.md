@@ -33,7 +33,7 @@ Built by hand, deployed on Vercel, fits in your pocket on mobile.
 
 🔧 **Engineering Mode** — top-right corner. Flip the switch. The site re-renders as a component library. Each section gets a `<Hero />` tag. Hover the `ℹ` icon and you see real React-style documentation — props, state, dependencies, what renders inside. A live component tree appears on the left. The footer adds a counter. JetBrains Mono everywhere. Toggle back to Presentation Mode and the site looks like nothing happened.
 
-🎮 **Live Code Sandbox** — section "Live Code Sandbox". Three editors (HTML / CSS / JS), an iframe preview, real-time updates. Comes pre-loaded with the Supernatural cast list because of course it does. Try changing the colors. Try breaking it. There's a Reset button.
+🧭 **How I Work** — section "How I Work". Four steps from idea to production — Understand, Design, Build, Ship — numbered with kanji 一 二 三 四 stamped like red hanko seals.
 
 🕹️ **The Konami Code** works. `↑ ↑ ↓ ↓ ← → ← → B A` — somewhere on the site. Try it.
 
@@ -121,7 +121,7 @@ infra:
 
 No framework. No build step. Just `index.html`, `style.css`, `script.js`.
 
-That was a deliberate choice. The whole site — Engineering Mode, the sandbox, the scroll reveals, the Konami easter egg, the floating gradient orbs, the GIF strips — is built on plain HTML, CSS and vanilla JavaScript. It loads instantly, runs on anything, and the entire source is something you can read in one sitting.
+That was a deliberate choice. The whole site — Engineering Mode, the process section, the scroll reveals, the Konami easter egg, the floating gradient orbs, the GIF strips — is built on plain HTML, CSS and vanilla JavaScript. It loads instantly, runs on anything, and the entire source is something you can read in one sitting.
 
 The harder projects in the portfolio (Hunter's Codex, DevMetrics, Minecraft Viewer) use the full stack with frameworks. This one stays minimal on purpose.
 

@@ -47,7 +47,7 @@
           <a href="#experience">Experience</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
-          <a href="#sandbox">Sandbox</a>
+          <a href="#process">Process</a>
           <a href="#education">Education</a>
           <a href="#contacts">Contacts</a>
         </nav>
@@ -579,7 +579,7 @@
               <h3>Personal Resume Website</h3>
               <p>
                 This very site — a clean, semantic personal portfolio. Responsive CSS3
-                design, scroll-reveal animations, a live code sandbox and an Engineering
+                design, scroll-reveal animations, a "How I Work" process section and an Engineering
                 Mode with component docs. Deployed on Vercel.
               </p>
               <div class="project__links">
@@ -591,36 +591,52 @@
         </div>
       </section>
 
-      <section class="section" id="sandbox">
+      <section class="section" id="process">
         <div class="container">
-          <h2 class="section__title reveal">Live Code Sandbox</h2>
-          <p class="reveal" style="color: var(--muted); margin-bottom: 18px;">
-            Edit the code below — preview updates as you type. Try changing colors, text, or the JS logic.
+          <h2 class="section__title reveal">How I Work</h2>
+          <p class="section__lead reveal">
+            From a vague idea to a shipped product — the same four steps on every project,
+            whether it's a landing page or a full-stack app.
           </p>
 
-          <div class="sandbox reveal">
-            <div class="sandbox__tabs">
-              <button class="sandbox__tab is-active" data-tab="html">HTML</button>
-              <button class="sandbox__tab" data-tab="css">CSS</button>
-              <button class="sandbox__tab" data-tab="js">JS</button>
-              <button class="sandbox__reset" id="sandboxReset">↺ Reset</button>
-            </div>
-
-            <div class="sandbox__body">
-              <div class="sandbox__editors">
-                <textarea class="sandbox__editor is-active" id="editorHtml" spellcheck="false"></textarea>
-                <textarea class="sandbox__editor" id="editorCss" spellcheck="false"></textarea>
-                <textarea class="sandbox__editor" id="editorJs" spellcheck="false"></textarea>
-              </div>
-
-              <iframe
-                class="sandbox__preview"
-                id="sandboxPreview"
-                title="Code preview"
-                sandbox="allow-scripts"
-              ></iframe>
-            </div>
-          </div>
+          <ol class="process">
+            <li class="process__step reveal">
+              <span class="process__num" aria-hidden="true">一</span>
+              <h3>Understand</h3>
+              <p>
+                Clarify the problem, the users and the constraints before writing code.
+                Ask questions, sketch the data model and agree on what "done" means.
+              </p>
+              <span class="process__tools">Notes · Figma · User flows</span>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num" aria-hidden="true">二</span>
+              <h3>Design</h3>
+              <p>
+                Plan components and API contracts. Pick the simplest stack that fits —
+                React / Next.js on the front, Node.js and PostgreSQL behind it.
+              </p>
+              <span class="process__tools">Component tree · REST · Prisma schema</span>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num" aria-hidden="true">三</span>
+              <h3>Build</h3>
+              <p>
+                Small commits, typed code, honest reviews. Responsive layout and
+                accessibility from the start, tests where they actually matter.
+              </p>
+              <span class="process__tools">TypeScript · Jest · Cypress</span>
+            </li>
+            <li class="process__step reveal">
+              <span class="process__num" aria-hidden="true">四</span>
+              <h3>Ship &amp; Iterate</h3>
+              <p>
+                Deploy early, watch how it's used, fix what hurts. Automate the boring
+                parts with n8n workflows and LLM APIs.
+              </p>
+              <span class="process__tools">Vercel · GitHub Actions · n8n</span>
+            </li>
+          </ol>
         </div>
       </section>
 
