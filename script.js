@@ -16,6 +16,19 @@ const skillsFrontend = [
   'Local Storage',
 ];
 
+const skillsBackend = [
+  'Node.js',
+  'Express',
+  'Next.js API Routes',
+  'REST APIs',
+  'Prisma ORM',
+  'PostgreSQL',
+  'SQLite',
+  'NextAuth / OAuth',
+  'JWT Authentication',
+  'Telegram Bots (Telegraf)',
+];
+
 const skillsTools = [
   'Git & GitHub',
   'Vite',
@@ -57,6 +70,7 @@ function renderSkills(ids, list) {
 }
 
 renderSkills('skillsFrontend', skillsFrontend);
+renderSkills('skillsBackend', skillsBackend);
 renderSkills('skillsTools', skillsTools);
 renderSkills('skillsTesting', skillsTesting);
 renderSkills('skillsAutomation', skillsAutomation);
@@ -117,6 +131,7 @@ const COMPONENTS = [
     props: [
       ['categories', 'array', '3 groups'],
       ['skillsFrontend', 'array', '15 tags'],
+      ['skillsBackend', 'array', '10 tags'],
       ['skillsTools', 'array', '9 tags'],
       ['skillsTesting', 'array', '5 tags'],
     ],
