@@ -9,7 +9,7 @@
 ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝╚═════╝ ╚══════╝  ╚═══╝
 ```
 
-### the personal site of Maxim Davidiuk · Frontend Developer · Kyiv · 19
+### the personal site of Maksym Davidiuk · Frontend Developer · Kyiv · 19
 
 **[ → open the site ← ](https://resumesite-weld.vercel.app/)**
 

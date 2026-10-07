@@ -80,7 +80,7 @@ const COMPONENTS = [
     target: '.hero', name: 'Hero',
     description: 'Photo card + intro with badge, name, subtitle and CTAs.',
     props: [
-      ['name', 'string', '"Maxim Davidiuk"'],
+      ['name', 'string', '"Maksym Davidiuk"'],
       ['title', 'string', '"Frontend Developer"'],
       ['photoSrc', 'string', '"photo.jpg"'],
       ['actions', 'array', '3 buttons'],
