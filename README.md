@@ -1,15 +1,15 @@
 <div align="center">
 
 ```
-███╗   ███╗ █████╗ ██╗  ██╗██╗███╗   ███╗   ██████╗ ███████╗██╗   ██╗
-████╗ ████║██╔══██╗╚██╗██╔╝██║████╗ ████║   ██╔══██╗██╔════╝██║   ██║
-██╔████╔██║███████║ ╚███╔╝ ██║██╔████╔██║   ██║  ██║█████╗  ██║   ██║
-██║╚██╔╝██║██╔══██║ ██╔██╗ ██║██║╚██╔╝██║   ██║  ██║██╔══╝  ╚██╗ ██╔╝
-██║ ╚═╝ ██║██║  ██║██╔╝ ██╗██║██║ ╚═╝ ██║██╗██████╔╝███████╗ ╚████╔╝
-╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝     ╚═╝╚═╝╚═════╝ ╚══════╝  ╚═══╝
+███╗   ███╗ █████╗ ██╗  ██╗███████╗██╗   ██╗███╗   ███╗   ██████╗ ███████╗██╗   ██╗
+████╗ ████║██╔══██╗██║ ██╔╝██╔════╝╚██╗ ██╔╝████╗ ████║   ██╔══██╗██╔════╝██║   ██║
+██╔████╔██║███████║█████╔╝ ███████╗ ╚████╔╝ ██╔████╔██║   ██║  ██║█████╗  ██║   ██║
+██║╚██╔╝██║██╔══██║██╔═██╗ ╚════██║  ╚██╔╝  ██║╚██╔╝██║   ██║  ██║██╔══╝  ╚██╗ ██╔╝
+██║ ╚═╝ ██║██║  ██║██║  ██╗███████║   ██║   ██║ ╚═╝ ██║██╗██████╔╝███████╗ ╚████╔╝
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝     ╚═╝╚═╝╚═════╝ ╚══════╝  ╚═══╝
 ```
 
-### the personal site of Maksym Davidiuk · Frontend Developer · Kyiv · 19
+### the personal site of Maksym Davidiuk · Full-Stack Developer · Kyiv · 19
 
 **[ → open the site ← ](https://resumesite-weld.vercel.app/)**
 
@@ -71,8 +71,8 @@ Every one of them has a live demo on the site.
 2024 ─── 2024    Web Developer @ Glovo (Professional Training Program)
                  React + JavaScript on real company tasks. 9 months.
 
-2024 ─── now     Frontend Developer · Freelance
-                 React / TypeScript / SCSS / Vercel.
+2024 ─── now     Full-Stack Developer · Freelance
+                 React / TypeScript / Next.js / Node.js / PostgreSQL / Vercel.
 
 2025 ─── 2027    Mate Academy · Full-Stack Program
                  React, TypeScript, testing, code review.

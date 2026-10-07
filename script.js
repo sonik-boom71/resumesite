@@ -81,7 +81,7 @@ const COMPONENTS = [
     description: 'Photo card + intro with badge, name, subtitle and CTAs.',
     props: [
       ['name', 'string', '"Maksym Davidiuk"'],
-      ['title', 'string', '"Frontend Developer"'],
+      ['title', 'string', '"Full-Stack Developer"'],
       ['photoSrc', 'string', '"photo.jpg"'],
       ['actions', 'array', '3 buttons'],
     ],
