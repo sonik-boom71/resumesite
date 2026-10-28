@@ -2,11 +2,13 @@ const skillsFrontend = [
   'React 18',
   'React Router',
   'React Hooks',
+  'Next.js 14',
   'TypeScript (Advanced)',
   'JavaScript (ES6+)',
   'HTML5',
   'CSS3 / SCSS',
   'BEM Methodology',
+  'Tailwind CSS',
   'Context API',
   'Responsive Design',
   'Mobile-first',
@@ -23,10 +25,13 @@ const skillsBackend = [
   'REST APIs',
   'Prisma ORM',
   'PostgreSQL',
+  'SQL',
   'SQLite',
+  'Supabase (Auth, Row Level Security)',
   'NextAuth / OAuth',
   'JWT Authentication',
   'Telegram Bots (Telegraf)',
+  'Web Scraping (Cheerio)',
 ];
 
 const skillsTools = [
@@ -38,12 +43,15 @@ const skillsTools = [
   'Prettier',
   'Stylelint',
   'GitHub Pages',
+  'Vercel',
   'VS Code',
 ];
 
 const skillsTesting = [
   'Cypress (E2E)',
+  'Playwright (E2E)',
   'Jest (Unit)',
+  'Vitest (Unit)',
   'Manual Browser Testing',
   'Performance Optimization',
   'Accessibility Standards',
@@ -51,11 +59,22 @@ const skillsTesting = [
 
 const skillsAutomation = [
   'n8n Workflow Automation',
-  'LLM APIs (ChatGPT, Gemini)',
+  'Anthropic Claude API',
+  'LLM APIs (ChatGPT, Gemini, Groq)',
   'Prompt Engineering',
   'REST API Integration',
   'Cloud Functions',
   'Node.js Scripting',
+];
+
+const skillsOther = [
+  'Three.js',
+  'Framer Motion',
+  'PWA',
+  'Canvas / WebGL',
+  'Rust (Axum)',
+  'Basic C/C++',
+  'Agile (Scrum, Kanban)',
 ];
 
 function renderSkills(ids, list) {
@@ -74,6 +93,7 @@ renderSkills('skillsBackend', skillsBackend);
 renderSkills('skillsTools', skillsTools);
 renderSkills('skillsTesting', skillsTesting);
 renderSkills('skillsAutomation', skillsAutomation);
+renderSkills('skillsOther', skillsOther);
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -116,17 +136,19 @@ const COMPONENTS = [
   },
   {
     target: '#skills', name: 'SkillsGrid',
-    description: 'Three categorized skill clouds.',
+    description: 'Six categorized skill clouds.',
     props: [
-      ['categories', 'array', '3 groups'],
-      ['skillsFrontend', 'array', '15 tags'],
-      ['skillsBackend', 'array', '10 tags'],
-      ['skillsTools', 'array', '9 tags'],
-      ['skillsTesting', 'array', '5 tags'],
+      ['categories', 'array', '6 groups'],
+      ['skillsFrontend', 'array', '17 tags'],
+      ['skillsBackend', 'array', '13 tags'],
+      ['skillsTools', 'array', '10 tags'],
+      ['skillsTesting', 'array', '7 tags'],
+      ['skillsAutomation', 'array', '7 tags'],
+      ['skillsOther', 'array', '7 tags'],
     ],
     state: [['rendered', 'boolean']],
     deps: '—',
-    renders: 'section#skills > SkillsGrid > [Panel × 3]',
+    renders: 'section#skills > SkillsGrid > [Panel × 6]',
   },
   {
     target: '#experience', name: 'Timeline',

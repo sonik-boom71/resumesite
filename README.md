@@ -64,20 +64,21 @@ Every one of them has a live demo on the site.
 
 ```
 2019 ─── 2022    Game Developer @ Diamond Role Play
-                 C++. Game engine. Network logic. Combat mechanics.
-                 Multiplayer server performance for hundreds of concurrent players.
+                 C++ plugins for a live SA-MP server. Async MySQL, RakNet, ImGui.
+                 Performance and network stability for hundreds of concurrent players.
                  ≈ 3 years.
 
-2024 ─── 2024    Web Developer @ Glovo (Professional Training Program)
-                 React + JavaScript on real company tasks. 9 months.
+2023 ─── 2024    Full-Stack Developer @ Glovo
+                 Courier-facing web app: React UI + REST API for orders and deliveries.
+                 ≈ 1 year 3 months.
 
 2024 ─── now     Full-Stack Developer · Freelance
-                 React / TypeScript / Next.js / Node.js / PostgreSQL / Vercel.
+                 React / TypeScript / Next.js / Node.js / PostgreSQL / Supabase / n8n.
 
 2025 ─── 2027    Mate Academy · Full-Stack Program
                  React, TypeScript, testing, code review.
 
-2026 ─── now     Programming Teacher @ IT-Friends
+2026 ─── 2026    Programming Teacher @ IT-Friends
                  Teaching algorithms to kids (10–11). Construct, Roblox Studio.
 ```
 
@@ -130,7 +131,7 @@ The harder projects in the portfolio (Hunter's Codex, DevMetrics, Minecraft View
 ## links
 
 - 🌍 **Live site:** https://resumesite-weld.vercel.app/
-- 💼 **LinkedIn:** [maxim-davidiuk-73a38a399](https://www.linkedin.com/in/maxim-davidiuk-73a38a399/)
+- 💼 **LinkedIn:** [maksym-davidiuk-73a38a399](https://www.linkedin.com/in/maksym-davidiuk-73a38a399/)
 - 🐙 **GitHub:** [@sonik-boom71](https://github.com/sonik-boom71)
 - 📄 **Resume (PDF):** [Google Doc](https://docs.google.com/document/d/1ItrjDyEQx3K_DGnOSRbuFPfwR_nytezEltgsE1dilH0/edit)
 - 💬 **Telegram:** [@TeaErlGrey](https://t.me/TeaErlGrey)
@@ -141,7 +142,7 @@ The harder projects in the portfolio (Hunter's Codex, DevMetrics, Minecraft View
 
 ```
               ⚙️  open to Frontend / Full-Stack roles  ⚙️
-                Junior+ heading toward Middle · Kyiv
+                   Middle Full-Stack · Kyiv
                 React · TypeScript · Node.js · Rust
                               · ·
                   ready for technical interviews
